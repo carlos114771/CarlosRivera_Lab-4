@@ -45,7 +45,11 @@ public class Mago extends Piezas {
         submenu = "a- derecha\n"
                 + "b- izquierda\n"
                 + "c- arriba\n"
-                + "d- abajo\n";
+                + "d- abajo\n"
+                + "e- arriba-izq\n"
+                + "f- arriba-der\n"
+                + "g- abajo-izq\n"
+                + "h- abajo-der\n";
         subopcion = JOptionPane.showInputDialog(submenu);
         int Dis = Integer.parseInt(JOptionPane.showInputDialog("Distancia?: "));
         switch (subopcion) {
@@ -81,7 +85,38 @@ public class Mago extends Piezas {
                 } catch (Exception e) {
                 }
                 return Tabla;
-
+            case "e":
+                try {
+                    char P = Tabla[ypos][xpos];
+                    Tabla[ypos - Dis][xpos - Dis] = P;
+                    Tabla[ypos][xpos] = ' ';
+                } catch (Exception e) {
+                }
+                return Tabla;
+            case "f":
+                try {
+                    char P = Tabla[ypos][xpos];
+                    Tabla[ypos - Dis][xpos + Dis] = P;
+                    Tabla[ypos][xpos] = ' ';
+                } catch (Exception e) {
+                }
+                return Tabla;
+            case "g":
+                try {
+                    char P = Tabla[ypos][xpos];
+                    Tabla[ypos + Dis][xpos - Dis] = P;
+                    Tabla[ypos][xpos] = ' ';
+                } catch (Exception e) {
+                }
+                return Tabla;
+            case "h":
+                try {
+                    char P = Tabla[ypos][xpos];
+                    Tabla[ypos + Dis][xpos - Dis] = P;
+                    Tabla[ypos][xpos] = ' ';
+                } catch (Exception e) {
+                }
+                return Tabla;
         }
         return Tabla;
     }

@@ -10,5 +10,10 @@ package carlosrivera_lab.pkg4;
  * @author Usuario Dell
  */
 public class Mi_Excepcion  extends Exception{
+
+    public Mi_Excepcion(String string) {
+        super(string);
+    }
+
     
 }

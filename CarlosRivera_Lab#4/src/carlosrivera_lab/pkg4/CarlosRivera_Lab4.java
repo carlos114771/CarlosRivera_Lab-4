@@ -20,13 +20,18 @@ public class CarlosRivera_Lab4 {
      */
     public static void main(String[] args) {
         Caballero caballero = new Caballero();
+        Tablero tablero = new Tablero();
+        Mago mago = new Mago();
+        Duendes duende = new Duendes();
+        Arqueros arquero = new Arqueros();
+        Rey rey = new Rey();
+        Dragon dragon = new Dragon();
         Scanner sc = new Scanner(System.in);
 
         int jugador = 0;
         int contador = 0;
         int x, y;
         boolean estado = false;
-        Tablero tablero = new Tablero();
         tablero.tamaño[0][0] = 'C';
         tablero.tamaño[0][2] = 'F';
         tablero.tamaño[0][3] = 'A';
@@ -43,6 +48,23 @@ public class CarlosRivera_Lab4 {
         tablero.tamaño[1][6] = 'D';
         tablero.tamaño[1][7] = 'A';
         tablero.tamaño[1][9] = 'D';
+
+        tablero.tamaño[9][0] = 'C';
+        tablero.tamaño[9][2] = 'F';
+        tablero.tamaño[9][3] = 'A';
+        tablero.tamaño[9][4] = 'R';
+        tablero.tamaño[9][5] = 'M';
+        tablero.tamaño[9][6] = 'A';
+        tablero.tamaño[9][7] = 'F';
+        tablero.tamaño[9][9] = 'C';
+        tablero.tamaño[8][0] = 'D';
+        tablero.tamaño[8][2] = 'A';
+        tablero.tamaño[8][3] = 'D';
+        tablero.tamaño[8][4] = 'C';
+        tablero.tamaño[8][5] = 'F';
+        tablero.tamaño[8][6] = 'D';
+        tablero.tamaño[8][7] = 'A';
+        tablero.tamaño[8][9] = 'D';
         ArrayList<Jugador> Jugadores = new ArrayList();
         boolean Exit = true;
         int ID = 0;
@@ -90,7 +112,16 @@ public class CarlosRivera_Lab4 {
                                 case 'C':
                                     tablero.tamaño = caballero.movimiento(tablero.tamaño, Ypos, Xpos);
                                     break;
-
+                                case 'M':
+                                    tablero.tamaño = mago.movimiento(tablero.tamaño, Ypos, Xpos);
+                                    break;
+                                case 'D':
+                                    tablero.tamaño = duende.movimiento(tablero.tamaño, Ypos, Xpos);
+                                    break;
+                                case 'F':
+                                    tablero.tamaño = dragon.movimiento(tablero.tamaño, Ypos, Xpos);
+                                case 'R':
+                                    tablero.tamaño = rey.movimiento(tablero.tamaño, Ypos, Xpos);
                             }
                             tablero.DrawBoard();
 

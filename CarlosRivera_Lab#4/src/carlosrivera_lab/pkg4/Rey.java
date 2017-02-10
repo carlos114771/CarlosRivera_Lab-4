@@ -38,8 +38,12 @@ public class Rey extends Piezas {
     }
 
     @Override
-    public boolean movimiento() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public char[][] movimiento(char[][] Tabla, int ypos, int xpos)  {
+        try {
+            throw new Mi_Excepcion("El rey no se puede mover");
+        } catch (Exception e) {
+        }
+        return Tabla;
     }
 
 }

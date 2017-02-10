@@ -38,8 +38,14 @@ public class Duendes extends Piezas {
     }
 
     @Override
-    public boolean movimiento() {
-
+    public char[][] movimiento(char[][] Tabla, int ypos, int xpos) {
+        try {
+            char P = Tabla[ypos][xpos];
+            Tabla[ypos][xpos + 1] = P;
+            Tabla[ypos][xpos] = ' ';
+        } catch (Exception e) {
+        }
+        return Tabla;
     }
 
 }
