@@ -45,5 +45,5 @@ public abstract class Piezas {
         this.material = material;
     }
 
-    public abstract char[][] movimiento(char[][] Tabla, int ypos, int xpos);
+    public abstract char[][] movimiento(char[][] Tabla, int ypos, int xpos) throws Exception;
 }

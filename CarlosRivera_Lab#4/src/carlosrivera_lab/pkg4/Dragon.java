@@ -50,6 +50,7 @@ public class Dragon extends Piezas {
         switch (subopcion) {
             case "a":
                 try {
+                    ExceptionCus.Ocupado(Tabla, ypos - Dis, xpos - Dis);
                     char P = Tabla[ypos][xpos];
                     Tabla[ypos - Dis][xpos - Dis] = P;
                     Tabla[ypos][xpos] = ' ';
@@ -58,14 +59,16 @@ public class Dragon extends Piezas {
                 return Tabla;
             case "b":
                 try {
+                    ExceptionCus.Ocupado(Tabla, ypos - Dis, xpos + Dis);
                     char P = Tabla[ypos][xpos];
-                    Tabla[ypos + Dis][xpos - Dis] = P;
+                    Tabla[ypos - Dis][xpos + Dis] = P;
                     Tabla[ypos][xpos] = ' ';
                 } catch (Exception e) {
                 }
                 return Tabla;
             case "c":
                 try {
+                    ExceptionCus.Ocupado(Tabla, ypos + Dis, xpos - Dis);
                     char P = Tabla[ypos][xpos];
                     Tabla[ypos + Dis][xpos - Dis] = P;
                     Tabla[ypos][xpos] = ' ';
@@ -74,8 +77,9 @@ public class Dragon extends Piezas {
                 return Tabla;
             case "d":
                 try {
+                    ExceptionCus.Ocupado(Tabla, ypos + Dis, xpos - Dis);
                     char P = Tabla[ypos][xpos];
-                    Tabla[ypos + Dis][xpos + Dis] = P;
+                    Tabla[ypos + Dis][xpos - Dis] = P;
                     Tabla[ypos][xpos] = ' ';
                 } catch (Exception e) {
                 }

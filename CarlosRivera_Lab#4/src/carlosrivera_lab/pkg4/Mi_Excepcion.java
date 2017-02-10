@@ -15,5 +15,13 @@ public class Mi_Excepcion  extends Exception{
         super(string);
     }
 
+
+ 
+static void Ocupado(char[][] tabla, int PosY, int PosX) throws Mi_Excepcion, Exception {
+    if (!(tabla[PosY][PosX] == ' ')) {
+        throw  new  Mi_Excepcion("Ocupado");
+    } else {
+    }
+    }
     
 }

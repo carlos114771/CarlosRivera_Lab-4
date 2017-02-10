@@ -49,32 +49,38 @@ public class Caballero extends Piezas {
         switch (subopcion) {
             case "a":
                 try {
+                    ExceptionCus.Ocupado(Tabla, ypos, xpos + 2);
                     char P = Tabla[ypos][xpos];
-                    Tabla[ypos][xpos + 1] = P;
+                    Tabla[ypos][xpos + 2] = P;
                     Tabla[ypos][xpos] = ' ';
+
                 } catch (Exception e) {
+                    System.out.println("Cahcho");
                 }
                 return Tabla;
             case "b":
                 try {
+                    ExceptionCus.Ocupado(Tabla, ypos, xpos - 2);
                     char P = Tabla[ypos][xpos];
-                    Tabla[ypos][xpos - 1] = P;
+                    Tabla[ypos][xpos - 2] = P;
                     Tabla[ypos][xpos] = ' ';
                 } catch (Exception e) {
                 }
                 return Tabla;
             case "c":
                 try {
+                    ExceptionCus.Ocupado(Tabla, ypos - 2, xpos);
                     char P = Tabla[ypos][xpos];
-                    Tabla[ypos - 1][xpos] = P;
+                    Tabla[ypos - 2][xpos] = P;
                     Tabla[ypos][xpos] = ' ';
                 } catch (Exception e) {
                 }
                 return Tabla;
             case "d":
                 try {
+                    ExceptionCus.Ocupado(Tabla, ypos + 2, xpos);
                     char P = Tabla[ypos][xpos];
-                    Tabla[ypos + 1][xpos] = P;
+                    Tabla[ypos + 2][xpos] = P;
                     Tabla[ypos][xpos] = ' ';
                 } catch (Exception e) {
                 }
@@ -82,4 +88,5 @@ public class Caballero extends Piezas {
         }
         return Tabla;
     }
+
 }

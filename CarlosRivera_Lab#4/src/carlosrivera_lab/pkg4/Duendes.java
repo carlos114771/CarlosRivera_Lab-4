@@ -40,6 +40,9 @@ public class Duendes extends Piezas {
     @Override
     public char[][] movimiento(char[][] Tabla, int ypos, int xpos) {
         try {
+
+            ExceptionCus.Ocupado(Tabla, ypos, xpos + 1);
+
             char P = Tabla[ypos][xpos];
             Tabla[ypos][xpos + 1] = P;
             Tabla[ypos][xpos] = ' ';

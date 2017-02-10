@@ -38,8 +38,8 @@ public class Mago extends Piezas {
         return super.toString() + "Mago{" + "simbolo=" + simbolo + '}';
     }
 
-    @Override
-    public char[][] movimiento(char[][] Tabla, int ypos, int xpos) {
+  @Override
+   public char[][] movimiento(char[][] Tabla, int ypos, int xpos) {
 
         String submenu, subopcion;
         submenu = "a- derecha\n"
@@ -55,6 +55,7 @@ public class Mago extends Piezas {
         switch (subopcion) {
             case "a":
                 try {
+                    ExceptionCus.Ocupado(Tabla, ypos, xpos + Dis);
                     char P = Tabla[ypos][xpos];
                     Tabla[ypos][xpos + Dis] = P;
                     Tabla[ypos][xpos] = ' ';
@@ -63,6 +64,7 @@ public class Mago extends Piezas {
                 return Tabla;
             case "b":
                 try {
+                    ExceptionCus.Ocupado(Tabla, ypos, xpos - Dis);
                     char P = Tabla[ypos][xpos];
                     Tabla[ypos][xpos - Dis] = P;
                     Tabla[ypos][xpos] = ' ';
@@ -71,6 +73,7 @@ public class Mago extends Piezas {
                 return Tabla;
             case "c":
                 try {
+                    ExceptionCus.Ocupado(Tabla, ypos - Dis, xpos);
                     char P = Tabla[ypos][xpos];
                     Tabla[ypos - Dis][xpos] = P;
                     Tabla[ypos][xpos] = ' ';
@@ -79,6 +82,7 @@ public class Mago extends Piezas {
                 return Tabla;
             case "d":
                 try {
+                    ExceptionCus.Ocupado(Tabla, ypos + Dis, xpos);
                     char P = Tabla[ypos][xpos];
                     Tabla[ypos + Dis][xpos] = P;
                     Tabla[ypos][xpos] = ' ';
@@ -87,6 +91,7 @@ public class Mago extends Piezas {
                 return Tabla;
             case "e":
                 try {
+                    ExceptionCus.Ocupado(Tabla, ypos - Dis, xpos - Dis);
                     char P = Tabla[ypos][xpos];
                     Tabla[ypos - Dis][xpos - Dis] = P;
                     Tabla[ypos][xpos] = ' ';
@@ -95,6 +100,7 @@ public class Mago extends Piezas {
                 return Tabla;
             case "f":
                 try {
+                    ExceptionCus.Ocupado(Tabla, ypos - Dis, xpos + Dis);
                     char P = Tabla[ypos][xpos];
                     Tabla[ypos - Dis][xpos + Dis] = P;
                     Tabla[ypos][xpos] = ' ';
@@ -103,6 +109,7 @@ public class Mago extends Piezas {
                 return Tabla;
             case "g":
                 try {
+                    ExceptionCus.Ocupado(Tabla, ypos + Dis, xpos - Dis);
                     char P = Tabla[ypos][xpos];
                     Tabla[ypos + Dis][xpos - Dis] = P;
                     Tabla[ypos][xpos] = ' ';
@@ -111,6 +118,7 @@ public class Mago extends Piezas {
                 return Tabla;
             case "h":
                 try {
+                    ExceptionCus.Ocupado(Tabla, ypos + Dis, xpos - Dis);
                     char P = Tabla[ypos][xpos];
                     Tabla[ypos + Dis][xpos - Dis] = P;
                     Tabla[ypos][xpos] = ' ';
