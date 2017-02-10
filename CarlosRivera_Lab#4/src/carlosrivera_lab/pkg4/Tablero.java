@@ -42,4 +42,13 @@ public class Tablero {
         return "Tablero{" + "tama\u00f1o=" + tamaño + ", pieza=" + pieza + '}';
     }
 
+    public void mostrartablero() {
+        for (int i = 0; i < tamaño.length; i++) {
+            for (int j = 0; j < tamaño[i].length; j++) {
+                System.out.println("[" + tamaño[i][j] + "]");
+            }
+            System.out.println("");
+        }
+    }
+
 }

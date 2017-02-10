@@ -12,14 +12,25 @@ import java.awt.Color;
  * @author Usuario Dell
  */
 public class Caballero extends Piezas {
-
+    char simbolo;
     public Caballero() {
         super();
     }
 
-    public Caballero(Color color, String material) throws Mi_Excepcion {
+    public Caballero(char simbolo, Color color, String material) throws Mi_Excepcion {
         super(color, material);
+        this.simbolo = simbolo;
     }
+
+    public char getSimbolo() {
+        return simbolo;
+    }
+
+    public void setSimbolo(char simbolo) {
+        this.simbolo = simbolo;
+    }
+
+   
 
     @Override
     public String toString() {

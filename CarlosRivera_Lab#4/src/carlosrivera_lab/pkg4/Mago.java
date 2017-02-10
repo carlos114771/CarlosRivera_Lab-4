@@ -12,14 +12,24 @@ import java.awt.Color;
  * @author Usuario Dell
  */
 public  class Mago extends Piezas {
-
+    char simbolo;
     public Mago() {
         super();
     }
 
-    public Mago(Color color, String material) throws Mi_Excepcion {
+    public Mago(char simbolo, Color color, String material) throws Mi_Excepcion {
         super(color, material);
+        this.simbolo = simbolo;
     }
+
+    public char getSimbolo() {
+        return simbolo;
+    }
+
+    public void setSimbolo(char simbolo) {
+        this.simbolo = simbolo;
+    }
+    
 
     @Override
     public String toString() {

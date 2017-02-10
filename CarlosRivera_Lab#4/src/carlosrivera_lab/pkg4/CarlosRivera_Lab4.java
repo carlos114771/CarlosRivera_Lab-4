@@ -6,6 +6,7 @@
 package carlosrivera_lab.pkg4;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 import javax.swing.JOptionPane;
 
 /**
@@ -18,6 +19,12 @@ public class CarlosRivera_Lab4 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int jugador = 0;
+        int contador = 0;
+        int x, y;
+        boolean estado = false;
+        Tablero tablero = new Tablero();
         ArrayList<Jugador> Jugadores = new ArrayList();
         boolean Exit = true;
         int ID = 0;
@@ -26,7 +33,9 @@ public class CarlosRivera_Lab4 {
                 String option = JOptionPane.showInputDialog(""
                         + "A) Agregar Jugador\n"
                         + "B) Eliminar Jugador\n"
-                        + "C) Listar Jugaror"
+                        + "C) Listar Jugaror\n"
+                        + "D) Simulacion\n"
+                        + "E) Salir\n"
                 );
                 switch (option) {
                     case "a":
@@ -46,6 +55,25 @@ public class CarlosRivera_Lab4 {
                             System.out.println(Jugadores.get(i).toString());
                             System.out.println("-------------");
                         }
+                        break;
+                    case "d":
+                        do {
+                            if (contador % 2 == 0) {
+                                jugador = 1;
+                            } else {
+                                jugador = 2;
+                            }
+                            System.out.println("Jugador " + jugador);
+                            System.out.println(tablero);
+                            System.out.println("Ingrese la primera posicion ");
+                            x = sc.nextInt();
+                            System.out.println("Ingrese la segunda posicion ");
+                            y = sc.nextInt();
+                        } while (estado != false);
+
+                        break;
+                    case "e":
+                        System.exit(0);
                         break;
                 }
             } catch (NullPointerException e) {
