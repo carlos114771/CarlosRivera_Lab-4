@@ -11,19 +11,19 @@ import java.awt.Color;
  *
  * @author Usuario Dell
  */
-public  class Mago extends Piezas {
+public class Duendes extends Piezas {
 
-    public Mago() {
+    public Duendes() {
         super();
     }
 
-    public Mago(Color color, String material) throws Mi_Excepcion {
+    public Duendes(Color color, String material) throws Mi_Excepcion {
         super(color, material);
     }
 
     @Override
     public String toString() {
-        return super.toString() + "Mago{" + '}';
+        return super.toString() + "Duendes{" + '}';
     }
 
     @Override

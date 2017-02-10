@@ -11,24 +11,23 @@ import java.awt.Color;
  *
  * @author Usuario Dell
  */
-public  class Mago extends Piezas {
+public class Arqueros extends Piezas {
 
-    public Mago() {
+    public Arqueros() {
         super();
     }
 
-    public Mago(Color color, String material) throws Mi_Excepcion {
+    public Arqueros(Color color, String material) throws Mi_Excepcion {
         super(color, material);
     }
 
     @Override
     public String toString() {
-        return super.toString() + "Mago{" + '}';
+        return super.toString() + "Arqueros{" + '}';
     }
 
     @Override
     public boolean movimiento() {
-
     }
 
 }

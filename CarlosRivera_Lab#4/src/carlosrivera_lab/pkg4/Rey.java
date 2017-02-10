@@ -11,24 +11,24 @@ import java.awt.Color;
  *
  * @author Usuario Dell
  */
-public  class Mago extends Piezas {
+public class Rey extends Piezas {
 
-    public Mago() {
+    public Rey() {
         super();
     }
 
-    public Mago(Color color, String material) throws Mi_Excepcion {
+    public Rey(Color color, String material) throws Mi_Excepcion {
         super(color, material);
     }
 
     @Override
     public String toString() {
-        return super.toString() + "Mago{" + '}';
+        return super.toString() + "Rey{" + '}';
     }
 
     @Override
     public boolean movimiento() {
-
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

@@ -11,24 +11,35 @@ package carlosrivera_lab.pkg4;
  */
 public class Tablero {
 
-    int[][] tamaño = new int[9][9];
+    char[][] tamaño = new char[9][9];
+    Piezas pieza;
 
     public Tablero() {
     }
 
-    public int[][] getTamaño() {
+    public Tablero(Piezas pieza) {
+        this.pieza = pieza;
+    }
+
+    public char[][] getTamaño() {
         return tamaño;
     }
 
-    public void setTamaño(int[][] tamaño) {
+    public void setTamaño(char[][] tamaño) {
         this.tamaño = tamaño;
+    }
+
+    public Piezas getPieza() {
+        return pieza;
+    }
+
+    public void setPieza(Piezas pieza) {
+        this.pieza = pieza;
     }
 
     @Override
     public String toString() {
-        return "Tablero{" + "tama\u00f1o=" + tamaño + '}';
+        return "Tablero{" + "tama\u00f1o=" + tamaño + ", pieza=" + pieza + '}';
     }
-    
-    
 
 }
