@@ -11,7 +11,7 @@ package carlosrivera_lab.pkg4;
  */
 public class Tablero {
 
-    char[][] tamaño = new char[9][9];
+    char[][] tamaño = new char[10][10];
     Piezas pieza;
 
     public Tablero() {
@@ -37,18 +37,17 @@ public class Tablero {
         this.pieza = pieza;
     }
 
-    @Override
-    public String toString() {
-        return "Tablero{" + "tama\u00f1o=" + tamaño + ", pieza=" + pieza + '}';
-    }
-
-    public void mostrartablero() {
-        for (int i = 0; i < tamaño.length; i++) {
-            for (int j = 0; j < tamaño[i].length; j++) {
-                System.out.println("[" + tamaño[i][j] + "]");
+    public void DrawBoard() {
+      //  tamaño[0][0] = 'c';
+        for (int y = 0; y < 10; y++) {
+            for (int x = 0; x < 10; x++) {
+                System.out.print("[" + tamaño[y][x] + "]");
             }
             System.out.println("");
         }
     }
+
+   
+
 
 }

@@ -11,7 +11,7 @@ import java.awt.Color;
  *
  * @author Usuario Dell
  */
-public abstract class Piezas  implements Complemento{
+public abstract class Piezas {
 
     Color color;
     String material;
@@ -45,4 +45,5 @@ public abstract class Piezas  implements Complemento{
         this.material = material;
     }
 
+    public abstract char[][] movimiento(char[][] Tabla, int ypos, int xpos);
 }

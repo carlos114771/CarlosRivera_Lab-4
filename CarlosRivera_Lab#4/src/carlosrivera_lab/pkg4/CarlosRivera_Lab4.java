@@ -19,12 +19,30 @@ public class CarlosRivera_Lab4 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        Caballero caballero = new Caballero();
         Scanner sc = new Scanner(System.in);
+
         int jugador = 0;
         int contador = 0;
         int x, y;
         boolean estado = false;
         Tablero tablero = new Tablero();
+        tablero.tamaño[0][0] = 'C';
+        tablero.tamaño[0][2] = 'F';
+        tablero.tamaño[0][3] = 'A';
+        tablero.tamaño[0][4] = 'R';
+        tablero.tamaño[0][5] = 'M';
+        tablero.tamaño[0][6] = 'A';
+        tablero.tamaño[0][7] = 'F';
+        tablero.tamaño[0][9] = 'C';
+        tablero.tamaño[1][0] = 'D';
+        tablero.tamaño[1][2] = 'A';
+        tablero.tamaño[1][3] = 'D';
+        tablero.tamaño[1][4] = 'C';
+        tablero.tamaño[1][5] = 'F';
+        tablero.tamaño[1][6] = 'D';
+        tablero.tamaño[1][7] = 'A';
+        tablero.tamaño[1][9] = 'D';
         ArrayList<Jugador> Jugadores = new ArrayList();
         boolean Exit = true;
         int ID = 0;
@@ -64,18 +82,28 @@ public class CarlosRivera_Lab4 {
                                 jugador = 2;
                             }
                             System.out.println("Jugador " + jugador);
-                            System.out.println(tablero);
-                            System.out.println("Ingrese la primera posicion ");
-                            x = sc.nextInt();
-                            System.out.println("Ingrese la segunda posicion ");
-                            y = sc.nextInt();
-                        } while (estado != false);
+                            tablero.DrawBoard();
+                            int Ypos = Integer.parseInt(JOptionPane.showInputDialog("Ingrese posicion en Y: "));
+                            int Xpos = Integer.parseInt(JOptionPane.showInputDialog("Ingrese posicion en X: "));
+                            char Pieza = tablero.tamaño[Ypos][Xpos];
+                            switch (Pieza) {
+                                case 'C':
+                                    tablero.tamaño = caballero.movimiento(tablero.tamaño, Ypos, Xpos);
+                                    break;
+
+                            }
+                            tablero.DrawBoard();
+
+                            contador++;
+
+                        } while (estado != true);
 
                         break;
                     case "e":
                         System.exit(0);
                         break;
                 }
+
             } catch (NullPointerException e) {
                 Exit = false;
             }

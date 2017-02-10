@@ -13,17 +13,28 @@ import java.awt.Color;
  */
 public class Duendes extends Piezas {
 
+    char simbolo;
+
     public Duendes() {
         super();
     }
 
-    public Duendes(Color color, String material) throws Mi_Excepcion {
+    public Duendes(char simbolo, Color color, String material) throws Mi_Excepcion {
         super(color, material);
+        this.simbolo = simbolo;
+    }
+
+    public char getSimbolo() {
+        return simbolo;
+    }
+
+    public void setSimbolo(char simbolo) {
+        this.simbolo = simbolo;
     }
 
     @Override
     public String toString() {
-        return super.toString() + "Duendes{" + '}';
+        return super.toString() + "Duendes{" + "simbolo=" + simbolo + '}';
     }
 
     @Override

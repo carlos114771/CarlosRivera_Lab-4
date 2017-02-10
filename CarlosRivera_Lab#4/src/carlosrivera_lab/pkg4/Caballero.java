@@ -6,13 +6,16 @@
 package carlosrivera_lab.pkg4;
 
 import java.awt.Color;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author Usuario Dell
  */
 public class Caballero extends Piezas {
+
     char simbolo;
+
     public Caballero() {
         super();
     }
@@ -30,16 +33,53 @@ public class Caballero extends Piezas {
         this.simbolo = simbolo;
     }
 
-   
-
     @Override
     public String toString() {
-        return super.toString() + "Caballero{" + '}';
+        return super.toString() + "Caballero{" + "simbolo=" + simbolo + '}';
     }
 
     @Override
-    public boolean movimiento() {
-            
+    public char[][] movimiento(char[][] Tabla, int ypos, int xpos) {
+        String submenu, subopcion;
+        submenu = "a- derecha\n"
+                + "b- izquierda\n"
+                + "c- arriba\n"
+                + "d- abajo\n";
+        subopcion = JOptionPane.showInputDialog(submenu);
+        switch (subopcion) {
+            case "a":
+                try {
+                    char P = Tabla[ypos][xpos];
+                    Tabla[ypos][xpos + 1] = P;
+                    Tabla[ypos][xpos] = ' ';
+                } catch (Exception e) {
+                }
+                return Tabla;
+            case "b":
+                try {
+                    char P = Tabla[ypos][xpos];
+                    Tabla[ypos][xpos - 1] = P;
+                    Tabla[ypos][xpos] = ' ';
+                } catch (Exception e) {
+                }
+                return Tabla;
+            case "c":
+                try {
+                    char P = Tabla[ypos][xpos];
+                    Tabla[ypos - 1][xpos] = P;
+                    Tabla[ypos][xpos] = ' ';
+                } catch (Exception e) {
+                }
+                return Tabla;
+            case "d":
+                try {
+                    char P = Tabla[ypos][xpos];
+                    Tabla[ypos + 1][xpos] = P;
+                    Tabla[ypos][xpos] = ' ';
+                } catch (Exception e) {
+                }
+                return Tabla;
+        }
+        return Tabla;
     }
-
 }

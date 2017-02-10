@@ -13,17 +13,28 @@ import java.awt.Color;
  */
 public class Rey extends Piezas {
 
+    char simbolo;
+
     public Rey() {
         super();
     }
 
-    public Rey(Color color, String material) throws Mi_Excepcion {
+    public Rey(char simbolo, Color color, String material) throws Mi_Excepcion {
         super(color, material);
+        this.simbolo = simbolo;
+    }
+
+    public char getSimbolo() {
+        return simbolo;
+    }
+
+    public void setSimbolo(char simbolo) {
+        this.simbolo = simbolo;
     }
 
     @Override
     public String toString() {
-        return super.toString() + "Rey{" + '}';
+        return super.toString() + "Rey{" + "simbolo=" + simbolo + '}';
     }
 
     @Override
